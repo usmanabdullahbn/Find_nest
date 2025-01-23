@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Play, Pause } from "lucide-react";
 
+
 const VideoSection = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPaused, setIsPaused] = useState(false);

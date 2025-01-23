@@ -1,6 +1,6 @@
-import React, { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-import { Star, Home, Trophy, UserPlus } from "lucide-react"
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Star, Home, Trophy, UserPlus } from "lucide-react";
 
 const stats = [
   {
@@ -31,11 +31,11 @@ const stats = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
   },
-]
+];
 
 const StatsSection = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: false, margin: "-100px" }) // Animation triggers only once
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: "-100px" }); // Animation triggers only once
 
   // Animation variants
   const containerVariants = {
@@ -46,7 +46,7 @@ const StatsSection = () => {
         staggerChildren: 0.2, // Stagger animation for children
       },
     },
-  }
+  };
 
   const cardVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -58,7 +58,7 @@ const StatsSection = () => {
         ease: "easeOut",
       },
     },
-  }
+  };
 
   return (
     <section
@@ -93,7 +93,7 @@ const StatsSection = () => {
         ))}
       </motion.div>
     </section>
-  )
-}
+  );
+};
 
-export default StatsSection
+export default StatsSection;
