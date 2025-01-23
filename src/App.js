@@ -7,9 +7,10 @@ import VideoSection from "./component/VideoSection";
 import GallerySection from "./component/GallerySection";
 import AgentsSection from "./component/AgentsSection";
 import DiscoverSection from "./component/DiscoverSection";
-import LocationsSection from "./component/LocationsSection";
 import StatsSection from "./component/StatsSection";
 import BenefitsSection from "./component/BenefitsSection";
+import LocationsSection from "./component/LocationsSection";
+
 
 const App = () => {
   return (
