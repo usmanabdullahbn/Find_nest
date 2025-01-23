@@ -68,15 +68,13 @@ const AboutSection = () => {
             variants={textVariants}
           >
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incidit ut labore et dolore magna aliqua. Quis
-              ipsum suspendisse ultrices grida. Risus commdolore magna odo
-              viverra maecenas accumsan lacus vel facilisis.
+              Strategy Hub is a Qatar-based consultancy that aims to create a
+              positive impact on Qatar’s public and private institutions.
             </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incidit ut labore et dolore magna aliqua. Quis
-              ipsum suspendisse ultrices
+              We provide policy and strategic recommendations that focus on
+              international and public policy, environmental sustainability,
+              healthcare, and communications.
             </p>
           </motion.div>
 

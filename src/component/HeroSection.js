@@ -19,11 +19,11 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative container mx-auto h-full flex flex-col justify-center items-start px-4">
         <h1 className="text-white text-6xl font-bold max-w-3xl leading-[5rem] tracking-wider">
-          YOUR PATH TO
+          BUILDING STRATEGY
           <br />
-          HOMEOWNERSHIP
+          FROM HEART OF
           <br />
-          <span className="bg-amber-300">STARTS</span> HERE
+          QATAR.
         </h1>
       </div>
     </div>
