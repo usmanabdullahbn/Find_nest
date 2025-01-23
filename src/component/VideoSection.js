@@ -1,17 +1,59 @@
-import React from "react";
-import { Play } from "lucide-react";
+import React, { useState, useRef } from "react";
+import { Play, Pause } from "lucide-react";
 
 const VideoSection = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const videoRef = useRef(null);
+
+  const handlePlay = () => {
+    setIsPlaying(true);
+    setIsPaused(false);
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  const handlePause = () => {
+    setIsPaused(true);
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+  };
+
   return (
     <section className="relative h-screen w-full">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url('https://cdn.prod.website-files.com/66e14188b0980f46c8264498%2F66f13db856d98f4d4acd0cee_4770380-hd_1920_1080_30fps%20%281%29-poster-00001.jpg')`,
-        }}
-      >
-        <div className="absolute inset-0 bg-black/20" />
+      {/* Background Image or Video */}
+      <div className="absolute inset-0 bg-cover bg-center">
+        {isPlaying ? (
+          <video
+            ref={videoRef}
+            autoPlay
+            loop={!isPaused}
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source
+              src="https://cdn.prod.website-files.com/66e14188b0980f46c8264498%2F66f13db856d98f4d4acd0cee_4770380-hd_1920_1080_30fps%20%281%29-transcode.mp4"
+              type="video/mp4"
+            />
+            <source
+              src="https://cdn.prod.website-files.com/66e14188b0980f46c8264498%2F66f13db856d98f4d4acd0cee_4770380-hd_1920_1080_30fps%20%281%29-transcode.webm"
+              type="video/webm"
+            />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url('https://cdn.prod.website-files.com/66e14188b0980f46c8264498%2F66f13db856d98f4d4acd0cee_4770380-hd_1920_1080_30fps%20%281%29-poster-00001.jpg')`,
+            }}
+          >
+            <div className="absolute inset-0 bg-black/20" />
+          </div>
+        )}
       </div>
 
       {/* Content */}
@@ -30,9 +72,21 @@ const VideoSection = () => {
               Let's talk
             </button>
 
-            <button className="w-16 h-16 rounded-full bg-white hover:bg-gray-100 text-black flex items-center justify-center">
-              <Play className="h-6 w-6" />
-            </button>
+            {!isPlaying ? (
+              <button
+                className="w-16 h-16 rounded-full bg-white hover:bg-gray-100 text-black flex items-center justify-center"
+                onClick={handlePlay}
+              >
+                <Play className="h-6 w-6" />
+              </button>
+            ) : (
+              <button
+                className="w-16 h-16 rounded-full bg-white hover:bg-gray-100 text-black flex items-center justify-center"
+                onClick={isPaused ? handlePlay : handlePause}
+              >
+                {isPaused ? <Play className="h-6 w-6" /> : <Pause className="h-6 w-6" />}
+              </button>
+            )}
           </div>
         </div>
       </div>
