@@ -119,7 +119,7 @@ const GallerySection = () => {
         );
 
   return (
-    <section className="w-full mx-auto py-16 px-4 pt-[100px] mt-[100px] bg-gray-100">
+    <section className="w-full mx-auto py-16 px-4 pt-[100px] bg-gray-100">
       <div className="text-center space-y-8">
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold max-w-4xl mx-auto">
           The #1 site real estate professionals trust
