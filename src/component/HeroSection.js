@@ -21,7 +21,7 @@ const HeroSection = () => {
         <h1 className="text-white text-6xl font-bold max-w-3xl leading-[5rem] tracking-wider">
           BUILDING STRATEGY
           <br />
-          FROM THE <span className="bg-amber-300">HEART</span>
+          FROM THE <span className="bg-[#c4f135] text-black">HEART</span>
           <br />
            OF Qatar.
         </h1>

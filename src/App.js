@@ -5,7 +5,7 @@ import BenefitsSection from "./component/BenefitsSection";
 import Footer from "./component/Footer";
 import GallerySection from "./component/GallerySection";
 import HeroSection from "./component/HeroSection";
-import LocationsSection from "./component/LocationsSection";
+import InsightSection from "./component/InsightSection";
 import SiteHeader from "./component/SiteHeader";
 import StatsSection from "./component/StatsSection";
 import VideoSection from "./component/VideoSection";
@@ -19,7 +19,8 @@ const App = () => {
         <HeroSection />
         <AboutSection />
         <StatsSection />
-        <LocationsSection />
+        <InsightSection />
+        {/* <LocationsSection /> */}
         <GallerySection />
         <BenefitsSection />
         <VideoSection />
