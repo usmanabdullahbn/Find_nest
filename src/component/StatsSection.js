@@ -31,6 +31,13 @@ const stats = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
   },
+  {
+    icon: <UserPlus className="w-8 h-8" />,
+    value: "900+",
+    title: "Happy clients",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+  },
 ];
 
 const StatsSection = () => {
