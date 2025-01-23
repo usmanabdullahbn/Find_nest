@@ -35,12 +35,24 @@ const AgentsSection = () => {
       role: "Team lead / Broker",
       image:
         "https://cdn.prod.website-files.com/66e185ed6fc39a3ee85efc53/670e092acdd7ceb531a4c978_agent-3.avif",
+        socials: {
+          facebook: "#",
+          linkedin: "#",
+          instagram: "#",
+          twitter: "#",
+        },
     },
     {
       name: "Hardin Scott",
       role: "Financial Agent",
       image:
         "https://cdn.prod.website-files.com/66e185ed6fc39a3ee85efc53/66ffe629e4af05c423f13153_agent-5.avif",
+        socials: {
+          facebook: "#",
+          linkedin: "#",
+          instagram: "#",
+          twitter: "#",
+        },
     },
     {
       name: "Teressa Young",
@@ -59,6 +71,12 @@ const AgentsSection = () => {
       role: "Real Estate Agent",
       image:
         "https://cdn.prod.website-files.com/66e185ed6fc39a3ee85efc53/670e0a27eef59274db5961fc_agent-4.avif",
+        socials: {
+          facebook: "#",
+          linkedin: "#",
+          instagram: "#",
+          twitter: "#",
+        },
     },
   ];
 

@@ -1,15 +1,14 @@
 import React from "react";
-import SiteHeader from "./component/SiteHeader";
-import HeroSection from "./component/HeroSection";
 import AboutSection from "./component/AboutSection";
-import Footer from "./component/Footer";
-import VideoSection from "./component/VideoSection";
-import GallerySection from "./component/GallerySection";
 import AgentsSection from "./component/AgentsSection";
-import DiscoverSection from "./component/DiscoverSection";
-import StatsSection from "./component/StatsSection";
 import BenefitsSection from "./component/BenefitsSection";
+import Footer from "./component/Footer";
+import GallerySection from "./component/GallerySection";
+import HeroSection from "./component/HeroSection";
 import LocationsSection from "./component/LocationsSection";
+import SiteHeader from "./component/SiteHeader";
+import StatsSection from "./component/StatsSection";
+import VideoSection from "./component/VideoSection";
 
 
 const App = () => {
@@ -25,7 +24,7 @@ const App = () => {
         <BenefitsSection />
         <VideoSection />
         <AgentsSection />
-        <DiscoverSection />
+        {/* <DiscoverSection /> */}
         <Footer />
       </main>
     </div>

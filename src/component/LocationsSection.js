@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const locations = [
   {
@@ -28,17 +29,41 @@ const locations = [
 ];
 
 const LocationsSection = () => {
+  // Animation variants for text
+  const textVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <section className="container mx-auto py-16 px-4 mt-[100px]">
       <div className="grid lg:grid-cols-2 gap-8 items-center mb-12">
-        <div>
+        <motion.div
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <h2 className="text-6xl md:text-6xl font-bold mb-4 ml-[50px]">
             Luxury living in a<br />
             brand-new space
           </h2>
-        </div>
+        </motion.div>
+
         <div className="flex items-center justify-between mt-[50px]">
-          <div className="text-gray-600 max-w-md ml-[75px]">
+          <motion.div
+            className="text-gray-600 max-w-md ml-[75px]"
+            variants={textVariants}
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.2 }}
+          >
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
@@ -48,7 +73,7 @@ const LocationsSection = () => {
             <button className="bg-[#c4f135] hover:bg-[#b3df2d] text-black px-6 py-3 rounded-full font-bold transition-all duration-300">
               Explore properties
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
 

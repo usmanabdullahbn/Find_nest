@@ -1,11 +1,44 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const BenefitsSection = () => {
+  // Animation variants for text
+  const textVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  // Animation variants for images
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <div className="bg-white py-16 px-6 lg:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Section */}
-        <div className="flex flex-col gap-6">
+        <motion.div
+          className="flex flex-col gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={textVariants}
+        >
           <h2 className="text-5xl font-bold text-gray-900">
             The benefits of working with us
           </h2>
@@ -15,10 +48,14 @@ const BenefitsSection = () => {
             ipsum suspendisse.
           </p>
           <div className="flex items-start gap-8">
-            <img
+            <motion.img
               src="https://cdn.prod.website-files.com/66e14188b0980f46c8264498/66f6376f2f8d068e07609c16_single-image-8.avif"
               alt="Property"
               className="w-56 h-40 object-cover rounded-lg shadow-lg"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={imageVariants}
             />
             <div>
               <h3 className="text-lg font-semibold text-gray-900">
@@ -32,16 +69,22 @@ const BenefitsSection = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Section */}
-        <div className="relative group">
+        <motion.div
+          className="relative group"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={imageVariants}
+        >
           <img
             src="https://cdn.prod.website-files.com/66e14188b0980f46c8264498/66ffcd8a227e8744ff970d5f_single-image-7.avif"
             alt="Family"
             className="rounded-lg shadow-lg object-cover transition-transform duration-300 group-hover:scale-105 group-hover:shadow-xl"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );
