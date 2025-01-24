@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import geoImg from "./assert/Geographical.jpg";
 import transImg from "./assert/Transformation.jpg";
 import subImg from "./assert/subtainability.jpg";
-import sucImg from "./assert/success.jpg";
 
 const InsightSection = () => {
   const insights = [
@@ -22,92 +21,87 @@ const InsightSection = () => {
       image: subImg,
       alt: "Sustainability-related image",
     },
-    {
-      title: "NO SUCCESS WITHOUT SUSTAINABILITY",
-      image: sucImg,
-      alt: "Success and sustainability image",
-    },
   ];
 
-  // Animation variants for text and image
+  // Animation variants for text and cards
   const textVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
-  const imageVariants = {
+  const cardVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
       opacity: 1,
       scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut",
-      },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
   return (
-    <section className="container mx-auto px-4 py-12">
-      <motion.h2
-        className="text-4xl font-serif text-center mb-12"
+    <section className="container mx-auto py-16 px-4 mt-[100px]">
+      {/* Heading Section */}
+      <div className="grid lg:grid-cols-2 gap-8 items-center mb-12">
+        <motion.div variants={textVariants} initial="hidden" animate="visible">
+          <h2 className="text-6xl md:text-6xl font-bold mb-4 ml-[50px]">
+            Luxury living in a<br />
+            brand-new space
+          </h2>
+        </motion.div>
+
+        <motion.div
+          className="text-gray-600 max-w-md ml-[75px]"
+          variants={textVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.2 }}
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+            ipsum.
+          </p>
+          <br />
+          <button className="bg-[#c4f135] hover:bg-[#b3df2d] text-black px-6 py-3 rounded-full font-bold transition-all duration-300">
+            Explore properties
+          </button>
+        </motion.div>
+      </div>
+
+      {/* Insights Grid */}
+      <motion.div
+        className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-[150px]"
         initial="hidden"
         animate="visible"
-        variants={textVariants}
+        variants={cardVariants}
+        viewport={{ once: false }} // Ensures the animation happens only once
       >
-        INSIGHTS
-      </motion.h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {insights.map((insight, index) => (
-          <motion.div
-            key={index}
-            className="relative group cursor-pointer overflow-hidden aspect-[3/4]"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false }}
-            variants={imageVariants}
+          <div
+            key={insight.title}
+            className={`relative h-[400px] group overflow-hidden rounded-lg ${
+              index === 1 ? "-translate-y-[100px]" : ""
+            }`}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 120 }}
           >
+            {/* Image */}
             <img
               src={insight.image}
               alt={insight.alt}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/50 transition-opacity duration-300 group-hover:bg-black/60" />
-            <div className="absolute inset-0 flex flex-col justify-center items-center p-6">
-              <motion.h3
-                className="text-white text-center text-xl font-medium leading-tight"
-                initial="hidden"
-                animate="visible"
-                variants={textVariants}
-              >
-                {insight.title}
-              </motion.h3>
-              <div className="absolute bottom-4 right-4 w-6 h-6 flex items-center justify-center">
-                <svg
-                  className="w-4 h-4 text-white opacity-80"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 4v16m8-8H4"
-                  />
-                </svg>
-              </div>
+            <div className="absolute bottom-0 left-0 p-6 text-white bg-black/50">
+              <h3 className="text-2xl font-bold mb-2">{insight.title}</h3>
+              <p>{insight.alt}</p>
             </div>
-          </motion.div>
+          </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };
