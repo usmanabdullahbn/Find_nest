@@ -47,10 +47,14 @@ const InsightSection = () => {
       {/* Heading Section */}
       <div className="grid lg:grid-cols-2 gap-8 items-center mb-12">
         <motion.div variants={textVariants} initial="hidden" animate="visible">
-          <h2 className="text-6xl md:text-6xl font-bold mb-4 ml-[50px]">
-            Luxury living in a<br />
-            brand-new space
-          </h2>
+          <motion.h2
+            className="text-4xl font-serif text-center mb-12"
+            initial="hidden"
+            animate="visible"
+            variants={textVariants}
+          >
+            INSIGHTS
+          </motion.h2>
         </motion.div>
 
         <motion.div
